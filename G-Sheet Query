@@ -1,0 +1,14 @@
+=if(B2="DATA",Transpose(QUERY('WR & STOCK'!$A$1:$L," Select G, Sum (I) 
+Where A is not null
+AND C = """&B1&"""
+AND B = """&A4&"""
+Group by G Pivot D
+Order By G
+Label (G) 'Country', Sum (I) '' ")), Transpose(QUERY('WR & STOCK'!$A$1:$L," Select G, Sum (I) 
+Where A is not null
+AND C = """&B1&"""
+AND B = """&A4&"""
+AND D = """&B2&"""
+Group by G Pivot L
+Order By G
+Label (G) 'Model', Sum (I) '' ")))
